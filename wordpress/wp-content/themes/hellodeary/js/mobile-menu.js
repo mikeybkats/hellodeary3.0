@@ -1,4 +1,4 @@
-jquery(document).ready(function($){
+jQuery(document).ready(function($){
   var open = false;
 
   highlightMenuSelection();
@@ -26,8 +26,6 @@ jquery(document).ready(function($){
     unbindScroll();
     open = false;
   });
-
-});
 
 
 function bindScroll(){
@@ -58,3 +56,7 @@ function highlightMenuSelection(){
   console.log(windowLocation);
   $('a[href="'+windowLocation+'"]').parent().addClass('active');
 }
+
+});
+
+

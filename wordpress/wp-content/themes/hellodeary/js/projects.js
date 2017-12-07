@@ -1,4 +1,4 @@
-jquery(document).ready(function($){
+jQuery(document).ready(function($){
   activateSelectorOnScroll();
 
   $('.nav-list-item a').on('click', function(event){
@@ -9,7 +9,6 @@ jquery(document).ready(function($){
     setTimeout(activateSelectorOnScroll, 1200);
   });
 
-});
 
 function selectActiveSection(index){
   $('.projects-nav-list li a').removeClass('active');
@@ -51,3 +50,4 @@ function isElementInViewport (el) {
       rect.right <= (window.innerWidth || document.documentElement.clientWidth) /*or $(window).width() */
   );
 }
+});
