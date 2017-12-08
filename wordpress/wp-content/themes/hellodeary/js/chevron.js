@@ -1,5 +1,7 @@
 jQuery(document).ready(function($){
 
+  $(document).ready(function(){
+
   function chevronScroll(){
     $('.chevron').on('click',function(e){
       event.preventDefault();
@@ -9,5 +11,6 @@ jQuery(document).ready(function($){
 
   chevronScroll();
 
+});
 });
 

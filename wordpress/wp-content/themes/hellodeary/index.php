@@ -1,7 +1,5 @@
-<?php require_once($_SERVER['DOCUMENT_ROOT'] . "../../wordpress/wp-blog-header.php"); ?>
-
 <?php get_header(); ?>
-    
+
 <main>
     <section class="about-section row middle-xs center-xs">
       <div class="col-xs-11 col-sm-6 col-md-8">
@@ -92,5 +90,5 @@
     </section>
 </main>
 
-  </body>
-</html>
+<?php get_footer(); ?>
+
