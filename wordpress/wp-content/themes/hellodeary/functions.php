@@ -13,4 +13,11 @@ function hellodeary_theme_js() {
 }
 add_action( 'wp_enqueue_scripts', 'hellodeary_theme_js' );
 
+//Add theme support for Featured Images
+add_theme_support('post-thumbnails', array(
+ 'post',
+ 'page',
+ 'custom-post-type-name',
+));
+
 ?>

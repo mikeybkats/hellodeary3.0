@@ -42,6 +42,10 @@ jQuery(document).ready(function($){
     );
   }
 
+  //function hideSection(){
+    
+  //}
+
   activateSelectorOnScroll();
 
   $('.nav-list-item a').on('click', function(event){

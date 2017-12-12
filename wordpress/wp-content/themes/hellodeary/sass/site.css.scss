@@ -76,6 +76,33 @@ section {
   &.contact-section{
     background-color: $purple;
   }
+  &.projects-tab-section{
+    padding: 0%;
+    .tab-container{
+      p{
+        margin: 7px;
+        line-height: 18px;
+        text-align: center;
+      }
+      height: 100%;
+      .row{
+        height: 100%;
+      }
+    }
+    height: 35px;
+    .design-tab{
+      background-color: #B7C2E6;
+      height: 100%;
+    }
+    .development-tab{
+      background-color: #F37D67; 
+      height: 100%;
+    }
+  }
+}
+
+.hide {
+  display: none;
 }
 
 .clear {
@@ -303,7 +330,12 @@ nav.navigation {
 
 ////////////////////// projects page //////////////////////////
 .projects{
-  background: $bitter;
+  &.bitterColor{
+    background: $bitter;
+  }
+  &.lightBlueColor{
+    background: $lightBlue;
+  }
   section {
     padding: 0px 0px;
     @media screen and (min-width: 800px){
@@ -332,6 +364,9 @@ nav.navigation {
       margin-bottom: 0px;
       padding-bottom: 100px;
       background-color: $bitter;
+    }
+    &.design-section{
+      background-color: $lightBlue; 
     }
   }
 }
