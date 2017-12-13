@@ -1,28 +1,52 @@
 jQuery(document).ready(function($){
   $(document).ready(function(){
 
-  function selectActiveSection(index){
-    $('.projects-nav-list li a').removeClass('active');
-    $($('.projects-nav-list li a')[index]).toggleClass('active');
-    $('html, body').animate({scrollTop:$($('section.slide')[index]).offset().top});
+  function getMatchingSlide(selectedIndex){
+    var matchedSlide;
+    $('section.slide').each(function(){
+      if( !$(this).hasClass('hide')){
+        if( parseInt($(this).attr('value')) === selectedIndex ){
+          matchedSlide = this;
+        }
+      }
+    });
+    return matchedSlide;
   }
 
-  function getActiveSectionIndex(click){
-    var activeSectionIndex = $('.nav-list-item a').get().indexOf(event.currentTarget);
+  function selectActiveSection(selectedIndex){
+    $('.projects-nav-list li a').removeClass('active');
+     
+    $('.projects-nav-list li a').each(function(){
+      if( $(this).attr('value') === selectedIndex ){
+        $(this).toggleClass('active');
+      }
+    });
+
+    console.log(selectedIndex);
+    var matchedSlide = getMatchingSlide(parseInt(selectedIndex));
+    console.log(matchedSlide);
+    $('html, body').animate({scrollTop:$(matchedSlide).offset().top});
+  }
+
+  function getActiveSectionIndex(eventTarget){
+    //var activeSectionIndex = $('.nav-list-item a').get().indexOf(event.currentTarget);
+    var activeSectionIndex = $(eventTarget).attr('value');
     return activeSectionIndex;
   }
 
   function activateSelectorOnScroll(index){
     $(document).on('scroll', function(){
-      for(i = 0; i < $('section.slide').length; i++){
-        if (isElementInViewport($('section.slide h2')[i])){
-          $('.projects-nav-list li a').removeClass('active');
-          $($('.projects-nav-list li a')[i]).toggleClass('active');
-        }
-        if (isElementInViewport($('.content-section-title'))){
-          $('.projects-nav-list li a').removeClass('active');
-        }
-      }
+      //if( isElementInViewport($(getMatchingSlide(index));
+
+      //for(i = 0; i < $('section.slide').length; i++){
+        //if (isElementInViewport($('section.slide h2')[i])){
+          //$('.projects-nav-list li a').removeClass('active');
+          //$($('.projects-nav-list li a')[i]).toggleClass('active');
+        //}
+        //if (isElementInViewport($('.content-section-title'))){
+          //$('.projects-nav-list li a').removeClass('active');
+        //}
+      //}
     });
   }
 
@@ -51,6 +75,8 @@ jQuery(document).ready(function($){
       $('.project-row').addClass('lightBlueColor');
       $('.design-tab p').addClass('active');
       $('.development-tab p').removeClass('active');
+      $('.development-indicator').addClass('hide');
+      $('.design-indicator').removeClass('hide');
       $('.design-section').removeClass('hide');
       $('.development-section').addClass('hide');
     });
@@ -64,10 +90,12 @@ jQuery(document).ready(function($){
       $('.projects').addClass('paleColor');
       $('.project-row').addClass('paleColor');
 
+      $('.design-indicator').addClass('hide');
       $('.design-section').addClass('hide');
       $('.development-tab p').addClass('active');
       $('.design-tab p').removeClass('active');
       $('.development-section').removeClass('hide');
+      $('.development-indicator').removeClass('hide');
     });
   }
 
@@ -77,16 +105,16 @@ jQuery(document).ready(function($){
     });
   }
 
-  activateSelectorOnScroll();
-
   $('.nav-list-item a').on('click', function(event){
     event.preventDefault();
     $(document).off('scroll');
-    selectActiveSection(getActiveSectionIndex());
+    console.log(event.currentTarget);
+    selectActiveSection(getActiveSectionIndex(event.currentTarget));
 
     setTimeout(activateSelectorOnScroll, 1200);
   });
 
+  activateSelectorOnScroll();
   hideShowDesignSection();
   hideShowDevSection();
   preventDefaultOnVideoButtons();

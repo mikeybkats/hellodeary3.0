@@ -6,15 +6,33 @@
 
 <main class="projects">
 
-  <div class="projects-nav">
-    <ul class="projects-nav-list">
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-      <li class="nav-list-item"><a href="" class="indicator"></a></li>
-    </ul>
-  </div>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+  <?php
+    $posts = get_posts( array('posts_per_page'=> 8));
+    $post_id = get_the_ID();
+    $value = 0;
+    $devValue = 0;
+  ?>
+      <div class="design-projects-nav projects-nav">
+        <ul class="projects-nav-list">
+          <?php 
+            foreach ($posts as $post) : setup_postdata( $post ); 
+              $development = has_tag( 'development', $post );
+              $design = has_tag( 'design', $post );
+          ?>
+            <?php if ( $design > 0 ) : ?>
+              <li class="nav-list-item design-indicator hide" ><a href="" class="indicator" value="<?php echo $value; ?>"></a></li>
+              <?php $value++; ?>
+            <?php endif; ?>
+            <?php if ( $development > 0 ) : ?>
+              <li class="nav-list-item development-indicator"><a href="" class="indicator" value="<?php echo $devValue; ?>"></a></li>
+              <?php $devValue++; ?>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+  
 
   <section class="content-section-title row center-xs middle-xs">
     <div class="col-xs-12">
@@ -38,19 +56,18 @@
     </div>
   </section>
 
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <?php
-  $posts = get_posts( array('posts_per_page'   => 8));
-  $post_id = get_the_ID();
-  foreach ($posts as $post) : setup_postdata( $post ); 
-    $development = has_tag( 'development', $post );
-    $design = has_tag( 'design', $post );
-    $video = has_tag( 'video', $post );
+    $value = 0;
+    $devValue = 0;
+    foreach ($posts as $post) : setup_postdata( $post ); 
+      $development = has_tag( 'development', $post );
+      $design = has_tag( 'design', $post );
+      $video = has_tag( 'video', $post );
   ?>
   
   <?php if ( $design > 0 ) : ?>
-    <section class="design-section hide row slide  middle-xs center-xs project-row" id=" ">
+    <section class="design-section hide row slide  middle-xs center-xs project-row" id=" " value="<?php echo $value; ?>">
       <?php if ( has_post_thumbnail() ) : ?>
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
@@ -82,10 +99,11 @@
         </div>
       </div>
     </section>
+    <?php $value++; ?>
   <?php endif; ?>
 
   <?php if ( $development > 0 ) : ?>
-    <section class="development-section row slide  middle-xs center-xs project-row" id=" ">
+    <section class="development-section row slide  middle-xs center-xs project-row" id=" " value="<?php echo $devValue; ?>">
       <?php if ( has_post_thumbnail() ) : ?>
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
@@ -105,6 +123,7 @@
         </div>
       </div>
     </section>
+    <?php $devValue++; ?>
   <?php endif; ?>
 
 <?php
