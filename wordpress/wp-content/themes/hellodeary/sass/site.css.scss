@@ -76,29 +76,6 @@ section {
   &.contact-section{
     background-color: $purple;
   }
-  &.projects-tab-section{
-    padding: 0%;
-    .tab-container{
-      p{
-        margin: 7px;
-        line-height: 18px;
-        text-align: center;
-      }
-      height: 100%;
-      .row{
-        height: 100%;
-      }
-    }
-    height: 35px;
-    .design-tab{
-      background-color: #B7C2E6;
-      height: 100%;
-    }
-    .development-tab{
-      background-color: #F37D67; 
-      height: 100%;
-    }
-  }
 }
 
 .hide {
@@ -329,19 +306,23 @@ nav.navigation {
 }
 
 ////////////////////// projects page //////////////////////////
+.paleColor{
+  background-color: $pale !important;
+}
+.lightBlueColor{
+  background-color: $lightBlue !important;
+}
+
 .projects{
-  &.bitterColor{
-    background: $bitter;
-  }
-  &.lightBlueColor{
-    background: $lightBlue;
-  }
+  background-color: $pale;
+  
   section {
     padding: 0px 0px;
     @media screen and (min-width: 800px){
       padding: 8% 0px;
     }
     &.content-section-title{
+      background-color: $bitter;
       .col-xs-12:first-child{
         padding-bottom: 70px;
       }
@@ -355,7 +336,7 @@ nav.navigation {
       margin-bottom: 50px;
       height: 100%;
       transform: translate(0%, 0%);
-
+      
     }
     &.project-row:nth-child(3){
 
@@ -367,6 +348,59 @@ nav.navigation {
     }
     &.design-section{
       background-color: $lightBlue; 
+    }
+  }
+  section.projects-tab-section{
+    padding: 0%;
+    min-height: unset;
+    .active{
+      opacity: 1;
+    }
+    .tab-container{
+      p{
+        margin: 7px;
+        line-height: 18px;
+        text-align: center;
+      }
+      height: 100%;
+      .row{
+        height: 100%;
+      }
+    }
+    height: 35px;
+    p{
+        opacity: .25;
+    }
+    .design-tab{
+      transition: all 0.5s;
+      background-color: #B7C2E6;
+      height: 100%;
+      p{
+        color: $darkBlue;
+      }
+      &:hover{
+        cursor: pointer;
+        p{
+          color: $darkBlue;
+          opacity: 1;
+        }
+      }
+    }
+    .development-tab{
+      transition: all 0.5s;
+      background-color: $pale; 
+      height: 100%;
+      p{
+        color: $bitter;
+      }
+      &:hover{
+        //background-color: white;
+        cursor: pointer;
+        p{
+          color: $bitter;
+          opacity: 1;
+        }
+      }
     }
   }
 }
@@ -382,11 +416,6 @@ nav.navigation {
   position: relative;
   display: block;
   z-index: 0;
-  // position: absolute;
-  // transform: translate(0%, -25%);
-  // @media screen and (min-width:400px){
-    // transform: translate(0%, -35%);
-  // }
 }
 
 .project-info{
@@ -404,6 +433,7 @@ nav.navigation {
 
 .projects-nav {
   position: fixed;
+  height: 200px;
   z-index: 600;
   top: 0px;
   right: 0px;
@@ -530,6 +560,31 @@ main.skills-page{
   }
 }
 
+////////////////////// iframe ////////////////////////////////
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 16x9 Aspect Ratio */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%;
+}
+
+/* 4x3 Aspect Ratio */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 ////////////////////// media queries //////////////////////////
 @media (max-width: 799px){
   .project-info{
@@ -594,11 +649,14 @@ main.skills-page{
   }
 //////////////////////////// projects section - desktop-view //////////////////////
   .projects{
-    background: $bitter;
     section {
       min-height: 100%;
       &.project-row{
+        background-color: $pale;
         height: 100vh;
+      }
+      &.content-section-title{
+        background-color: $bitter;
       }
       .slide {
         display: block;

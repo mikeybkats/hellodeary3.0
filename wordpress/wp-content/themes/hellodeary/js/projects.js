@@ -42,9 +42,40 @@ jQuery(document).ready(function($){
     );
   }
 
-  //function hideSection(){
-    
-  //}
+  function hideShowDesignSection(){
+    $('.design-tab').on( 'click', function(e){
+      e.preventDefault();
+      $('.projects').removeClass('paleColor');
+      $('.project-row').removeClass('paleColor');
+      $('.projects').addClass('lightBlueColor');
+      $('.project-row').addClass('lightBlueColor');
+      $('.design-tab p').addClass('active');
+      $('.development-tab p').removeClass('active');
+      $('.design-section').removeClass('hide');
+      $('.development-section').addClass('hide');
+    });
+  }
+
+  function hideShowDevSection(){
+    $('.development-tab').on( 'click', function(e){
+      e.preventDefault();
+      $('.projects').removeClass('lightBlueColor');
+      $('.project-row').removeClass('lightBlueColor');
+      $('.projects').addClass('paleColor');
+      $('.project-row').addClass('paleColor');
+
+      $('.design-section').addClass('hide');
+      $('.development-tab p').addClass('active');
+      $('.design-tab p').removeClass('active');
+      $('.development-section').removeClass('hide');
+    });
+  }
+
+  function preventDefaultOnVideoButtons(){
+    $('.video-button').on('click', function(event){
+      event.preventDefault();
+    });
+  }
 
   activateSelectorOnScroll();
 
@@ -55,5 +86,10 @@ jQuery(document).ready(function($){
 
     setTimeout(activateSelectorOnScroll, 1200);
   });
-});
+
+  hideShowDesignSection();
+  hideShowDevSection();
+  preventDefaultOnVideoButtons();
+
+  });
 });

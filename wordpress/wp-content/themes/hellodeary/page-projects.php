@@ -4,16 +4,7 @@
 
 <?php get_header(); ?>
 
-<section class="projects-tab-section middle-xs center-xs row">
-  <div class="col-xs-12 tab-container">
-    <div class="row center-xs middle-xs">
-        <div class="col-xs-6 col-sm-6 design-tab"><p>design</p></div>
-        <div class="col-xs-6 col-sm-6 development-tab"><p>development</p></div>
-    </div>
-  </div>
-</section>
-
-<main class="projects bitterColor">
+<main class="projects">
 
   <div class="projects-nav">
     <ul class="projects-nav-list">
@@ -38,6 +29,15 @@
     </div>
   </section>
 
+  <section class="projects-tab-section middle-xs center-xs row">
+    <div class="col-xs-12 tab-container">
+      <div class="row center-xs middle-xs">
+          <div class="col-xs-6 col-sm-6 design-tab"><a href=""><p>design</p></a></div>
+          <div class="col-xs-6 col-sm-6 development-tab"><a href=""><p class="active">development</p></a></div>
+      </div>
+    </div>
+  </section>
+
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <?php
@@ -46,6 +46,7 @@
   foreach ($posts as $post) : setup_postdata( $post ); 
     $development = has_tag( 'development', $post );
     $design = has_tag( 'design', $post );
+    $video = has_tag( 'video', $post );
   ?>
   
   <?php if ( $design > 0 ) : ?>
@@ -60,11 +61,23 @@
         <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>
         <div class="row center-xs">
           <div class="col-xs-12 button-container">
-            <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" target="_blank">
-              <div class="btn button-blue">
-                <h4>VIEW</h4>
-              </div>
-            </a>
+            <?php
+              if ( has_tag('video') > 0 ){  
+                $class='video-button';
+                $id=$key;
+                $target='_self';
+              }
+              else {
+                $class='';
+                $id='';
+                $target='_blank';
+              }
+            ?>
+              <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" id="<?php echo $id; ?>" target="<?php echo $target; ?>">
+              <div class="btn button-blue <?php echo $class; ?>">
+                  <h4>VIEW</h4>
+                </div>
+              </a>
           </div>
         </div>
       </div>
