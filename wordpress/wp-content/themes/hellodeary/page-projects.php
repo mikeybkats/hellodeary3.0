@@ -72,7 +72,7 @@
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
       <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2><?php the_title(); ?></h2>
+        <h2 value="<?php echo $value; ?>"><?php the_title(); ?></h2>
         <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>
@@ -108,7 +108,7 @@
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
       <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2><?php the_title(); ?></h2>
+        <h2 value="<?php echo $devValue; ?>"><?php the_title(); ?></h2>
         <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>

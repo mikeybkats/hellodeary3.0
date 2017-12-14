@@ -15,38 +15,36 @@ jQuery(document).ready(function($){
 
   function selectActiveSection(selectedIndex){
     $('.projects-nav-list li a').removeClass('active');
-     
-    $('.projects-nav-list li a').each(function(){
-      if( $(this).attr('value') === selectedIndex ){
-        $(this).toggleClass('active');
-      }
-    });
-
-    console.log(selectedIndex);
+    $(".projects-nav-list li a[value="+selectedIndex+"]").toggleClass('active');
     var matchedSlide = getMatchingSlide(parseInt(selectedIndex));
-    console.log(matchedSlide);
     $('html, body').animate({scrollTop:$(matchedSlide).offset().top});
+    console.log(matchedSlide);
   }
 
-  function getActiveSectionIndex(eventTarget){
-    //var activeSectionIndex = $('.nav-list-item a').get().indexOf(event.currentTarget);
-    var activeSectionIndex = $(eventTarget).attr('value');
+  function getActiveSectionIndex(index){
+    var activeSectionIndex;
+    if( index ){ 
+      activeSectionIndex = $(index).attr('value');
+    }
+    else{ 
+      activeSectionIndex = 0;
+    }
     return activeSectionIndex;
   }
 
-  function activateSelectorOnScroll(index){
+  function activateSelectorOnScroll(valueIndex){
     $(document).on('scroll', function(){
-      //if( isElementInViewport($(getMatchingSlide(index));
+       $('section.slide h2').each(function(){
+        if( isElementInViewport($(this)) ){
+          $('.projects-nav-list li a').removeClass('active');
+          var activeSection = $(this).attr('value');
+          $($('.projects-nav-list li a[value='+activeSection+']')).toggleClass('active');
+        }
+      });
 
-      //for(i = 0; i < $('section.slide').length; i++){
-        //if (isElementInViewport($('section.slide h2')[i])){
-          //$('.projects-nav-list li a').removeClass('active');
-          //$($('.projects-nav-list li a')[i]).toggleClass('active');
-        //}
-        //if (isElementInViewport($('.content-section-title'))){
-          //$('.projects-nav-list li a').removeClass('active');
-        //}
-      //}
+      if( isElementInViewport($('.content-section-title')) ){
+        $('.projects-nav-list li a').removeClass('active');
+      }
     });
   }
 
@@ -55,7 +53,7 @@ jQuery(document).ready(function($){
     if (typeof jQuery === 'function' && el instanceof jQuery) {
       el = el[0];
     }
-
+    //console.log(el);
     var rect = el.getBoundingClientRect();
 
     return (
@@ -73,6 +71,8 @@ jQuery(document).ready(function($){
       $('.project-row').removeClass('paleColor');
       $('.projects').addClass('lightBlueColor');
       $('.project-row').addClass('lightBlueColor');
+      $('html').removeClass('paleColor');
+      $('html').addClass('lightBlueColor');
       $('.design-tab p').addClass('active');
       $('.development-tab p').removeClass('active');
       $('.development-indicator').addClass('hide');
@@ -89,8 +89,10 @@ jQuery(document).ready(function($){
       $('.project-row').removeClass('lightBlueColor');
       $('.projects').addClass('paleColor');
       $('.project-row').addClass('paleColor');
-
+      $('html').removeClass('lightBlueColor');
+      $('html').addClass('paleColor');
       $('.design-indicator').addClass('hide');
+      $('.development-section').addClass('active');
       $('.design-section').addClass('hide');
       $('.development-tab p').addClass('active');
       $('.design-tab p').removeClass('active');
@@ -105,15 +107,14 @@ jQuery(document).ready(function($){
     });
   }
 
+  $('html').addClass('paleColor');
   $('.nav-list-item a').on('click', function(event){
     event.preventDefault();
     $(document).off('scroll');
-    console.log(event.currentTarget);
     selectActiveSection(getActiveSectionIndex(event.currentTarget));
-
     setTimeout(activateSelectorOnScroll, 1200);
   });
-
+  
   activateSelectorOnScroll();
   hideShowDesignSection();
   hideShowDevSection();
