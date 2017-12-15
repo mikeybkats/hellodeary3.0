@@ -1,0 +1,682 @@
+@import url("https://use.typekit.net/rey3dtk.css");
+/* line 6, sass/site.css.scss */
+html {
+  width: 100%;
+  height: 100%; }
+
+/* line 11, sass/site.css.scss */
+body {
+  position: relative;
+  text-align: center;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+  margin: 0px;
+  font-family: "canada-type-gibson",sans-serif; }
+
+/* line 22, sass/site.css.scss */
+a {
+  color: #FAF9F9;
+  text-decoration: none; }
+  /* line 25, sass/site.css.scss */
+  a:focus, a:hover {
+    color: #FAF9F9; }
+
+/* line 31, sass/site.css.scss */
+i {
+  color: #FAF9F9; }
+
+/* line 36, sass/site.css.scss */
+h2 {
+  font-family: "ratio",sans-serif;
+  color: #FAF9F9;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 0px; }
+
+/* line 43, sass/site.css.scss */
+h3 {
+  color: #FAF9F9;
+  font-size: 18px;
+  font-weight: 300; }
+
+/* line 48, sass/site.css.scss */
+h4 {
+  color: #FAF9F9;
+  font-size: 14px;
+  letter-spacing: 2.5px;
+  font-weight: 300; }
+
+/* line 54, sass/site.css.scss */
+p, li {
+  font-size: 18px;
+  color: #FAF9F9;
+  text-align: left;
+  line-height: 25px; }
+
+/* line 60, sass/site.css.scss */
+ul {
+  padding: 0px;
+  margin: 0px; }
+
+/* line 64, sass/site.css.scss */
+section {
+  height: 100vh;
+  max-width: 100%;
+  padding: 20% 0%;
+  margin-left: 0px !important;
+  margin-right: 0px !important; }
+  /* line 70, sass/site.css.scss */
+  section.about-section {
+    background-color: #EE7192; }
+  /* line 73, sass/site.css.scss */
+  section.skills-section {
+    background-color: #B7C2E6; }
+  /* line 76, sass/site.css.scss */
+  section.contact-section {
+    background-color: #5A2EB0; }
+
+/* line 81, sass/site.css.scss */
+.hide {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important; }
+
+/* line 87, sass/site.css.scss */
+.clear {
+  margin: 0px;
+  padding: 0px; }
+
+/* line 92, sass/site.css.scss */
+.middle-container {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center; }
+
+/* line 100, sass/site.css.scss */
+.content-section-title {
+  margin: 0px; }
+
+/* line 108, sass/site.css.scss */
+.chevron {
+  position: absolute;
+  z-index: 600;
+  max-height: 32px;
+  bottom: 60px;
+  left: 0;
+  right: 0; }
+
+/* line 117, sass/site.css.scss */
+.fa-chevron-down {
+  font-size: 2em; }
+
+/* line 120, sass/site.css.scss */
+.fa-chevron-down:hover {
+  cursor: pointer; }
+
+/* line 124, sass/site.css.scss */
+.linkedin {
+  margin-right: 15px; }
+  /* line 126, sass/site.css.scss */
+  .linkedin i {
+    font-size: 35px; }
+
+/* line 131, sass/site.css.scss */
+.fa-circle {
+  font-size: 10px;
+  margin: 0px 10px; }
+
+/* line 136, sass/site.css.scss */
+.github {
+  margin-left: 15px; }
+  /* line 138, sass/site.css.scss */
+  .github i {
+    font-size: 35px; }
+
+/* line 147, sass/site.css.scss */
+.about-section {
+  background-color: #EE7192; }
+
+/* line 151, sass/site.css.scss */
+.skills-section {
+  background-color: #B7C2E6; }
+
+/* line 155, sass/site.css.scss */
+.contact-section {
+  background-color: #5A2EB0; }
+
+/* line 160, sass/site.css.scss */
+.desktop-view {
+  display: none; }
+
+/* line 164, sass/site.css.scss */
+.btn {
+  border-radius: 40px;
+  border: 2px solid #faf9f9;
+  transition: all 0.5s;
+  max-width: 200px;
+  margin: 0px auto; }
+
+/* line 171, sass/site.css.scss */
+.button-container {
+  margin-top: 15%; }
+  /* line 174, sass/site.css.scss */
+  .button-container .button-regular:hover {
+    background: #FAF9F9;
+    border-color: #FAF9F9; }
+    /* line 175, sass/site.css.scss */
+    .button-container .button-regular:hover h4 {
+      color: #EE7192; }
+  /* line 182, sass/site.css.scss */
+  .button-container .button-blue {
+    border-color: #3126B1; }
+    /* line 184, sass/site.css.scss */
+    .button-container .button-blue h4 {
+      color: #3126B1; }
+    /* line 187, sass/site.css.scss */
+    .button-container .button-blue:hover {
+      background: #3126B1;
+      border-color: #3126B1; }
+      /* line 188, sass/site.css.scss */
+      .button-container .button-blue:hover h4 {
+        color: #FAF9F9; }
+
+/* line 197, sass/site.css.scss */
+nav.navigation {
+  position: fixed;
+  z-index: 600;
+  background-color: transparent;
+  margin: 0 auto;
+  width: 100%; }
+  /* line 203, sass/site.css.scss */
+  nav.navigation .nav-links-container {
+    z-index: 400;
+    height: 100%;
+    background-color: #EED4DE;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: -110%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+    /* line 215, sass/site.css.scss */
+    nav.navigation .nav-links-container.active {
+      transition: all 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
+      top: 0px; }
+    /* line 219, sass/site.css.scss */
+    nav.navigation .nav-links-container .nav-item {
+      padding: 12px 0px;
+      list-style: none; }
+      /* line 222, sass/site.css.scss */
+      nav.navigation .nav-links-container .nav-item a {
+        color: #FAF9F9;
+        font-size: 1.5em;
+        text-decoration: none; }
+      /* line 227, sass/site.css.scss */
+      nav.navigation .nav-links-container .nav-item:hover a {
+        color: #F37D67; }
+      /* line 230, sass/site.css.scss */
+      nav.navigation .nav-links-container .nav-item.active a {
+        color: #F37D67; }
+  /* line 237, sass/site.css.scss */
+  nav.navigation .nav-title-container {
+    max-width: 100%;
+    margin: 0px;
+    padding: 0px 20px; }
+  /* line 242, sass/site.css.scss */
+  nav.navigation .navigation-links {
+    max-width: 100%;
+    height: 65%;
+    padding: 0% 0px 0% 0px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column; }
+  /* line 254, sass/site.css.scss */
+  nav.navigation .nav-title {
+    z-index: 600;
+    display: block; }
+    /* line 257, sass/site.css.scss */
+    nav.navigation .nav-title h2 {
+      text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.35);
+      margin-top: 20px; }
+
+/* line 263, sass/site.css.scss */
+.contact-links {
+  background-color: #F37D67;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 35%;
+  justify-content: center;
+  align-content: center; }
+  /* line 271, sass/site.css.scss */
+  .contact-links ul {
+    list-style: none;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center; }
+  /* line 278, sass/site.css.scss */
+  .contact-links a:hover {
+    color: #F37D67; }
+
+/* line 282, sass/site.css.scss */
+.hamburger-container {
+  z-index: 600;
+  background: #FAF9F9;
+  width: 42px;
+  height: 42px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  overflow: visible !important;
+  margin: 20px 0px;
+  border-radius: 21px;
+  overflow: hidden;
+  box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.35); }
+  /* line 295, sass/site.css.scss */
+  .hamburger-container .hamburger {
+    color: #EE7192;
+    z-index: 600;
+    font-size: 1.25em;
+    margin-top: 11px;
+    display: none; }
+    /* line 301, sass/site.css.scss */
+    .hamburger-container .hamburger.active {
+      display: block; }
+
+/* line 306, sass/site.css.scss */
+.hamburger-container:hover {
+  cursor: pointer; }
+
+/* line 311, sass/site.css.scss */
+.paleColor {
+  background-color: #EED4DE !important; }
+
+/* line 314, sass/site.css.scss */
+.lightBlueColor {
+  background-color: #B7C2E6 !important; }
+
+/* line 318, sass/site.css.scss */
+.projects {
+  background-color: #EED4DE; }
+  /* line 321, sass/site.css.scss */
+  .projects section {
+    padding: 0px 0px; }
+    @media screen and (min-width: 800px) {
+      /* line 321, sass/site.css.scss */
+      .projects section {
+        padding: 8% 0px; } }
+    /* line 326, sass/site.css.scss */
+    .projects section.content-section-title {
+      background-color: #F37D67;
+      height: 100vh; }
+      /* line 328, sass/site.css.scss */
+      .projects section.content-section-title .col-xs-12:first-child {
+        padding-bottom: 70px; }
+      /* line 331, sass/site.css.scss */
+      .projects section.content-section-title h2 {
+        margin: 0px; }
+    /* line 336, sass/site.css.scss */
+    .projects section.project-row {
+      margin: 0px;
+      margin-bottom: 50px;
+      height: 100%;
+      transform: translate(0%, 0%); }
+    /* line 346, sass/site.css.scss */
+    .projects section.project-row:last-child {
+      margin-bottom: 0px;
+      padding-bottom: 100px;
+      background-color: #F37D67; }
+    /* line 351, sass/site.css.scss */
+    .projects section.design-section {
+      background-color: #B7C2E6; }
+  /* line 355, sass/site.css.scss */
+  .projects section.projects-tab-section {
+    padding: 0%;
+    min-height: unset;
+    height: 35px; }
+    /* line 358, sass/site.css.scss */
+    .projects section.projects-tab-section .active {
+      opacity: 1; }
+    /* line 361, sass/site.css.scss */
+    .projects section.projects-tab-section .tab-container {
+      height: 100%; }
+      /* line 362, sass/site.css.scss */
+      .projects section.projects-tab-section .tab-container p {
+        margin: 7px;
+        line-height: 18px;
+        text-align: center; }
+      /* line 368, sass/site.css.scss */
+      .projects section.projects-tab-section .tab-container .row {
+        height: 100%; }
+    /* line 373, sass/site.css.scss */
+    .projects section.projects-tab-section p {
+      opacity: .25; }
+    /* line 376, sass/site.css.scss */
+    .projects section.projects-tab-section .design-tab {
+      transition: all 0.5s;
+      background-color: #B7C2E6;
+      height: 100%; }
+      /* line 380, sass/site.css.scss */
+      .projects section.projects-tab-section .design-tab p {
+        color: #3126B1; }
+      /* line 383, sass/site.css.scss */
+      .projects section.projects-tab-section .design-tab:hover {
+        cursor: pointer; }
+        /* line 385, sass/site.css.scss */
+        .projects section.projects-tab-section .design-tab:hover p {
+          color: #3126B1;
+          opacity: 1; }
+    /* line 391, sass/site.css.scss */
+    .projects section.projects-tab-section .development-tab {
+      transition: all 0.5s;
+      background-color: #EED4DE;
+      height: 100%; }
+      /* line 395, sass/site.css.scss */
+      .projects section.projects-tab-section .development-tab p {
+        color: #F37D67; }
+      /* line 398, sass/site.css.scss */
+      .projects section.projects-tab-section .development-tab:hover {
+        cursor: pointer; }
+        /* line 401, sass/site.css.scss */
+        .projects section.projects-tab-section .development-tab:hover p {
+          color: #F37D67;
+          opacity: 1; }
+
+/* line 410, sass/site.css.scss */
+.project-image {
+  width: 100%;
+  height: 85vh;
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.35);
+  left: 0;
+  position: relative;
+  display: block;
+  z-index: 0; }
+  @media screen and (max-width: 360px) {
+    /* line 410, sass/site.css.scss */
+    .project-image {
+      height: 75vh; } }
+
+/* line 423, sass/site.css.scss */
+.project-info {
+  background: #FAF9F9;
+  z-index: 100;
+  padding: 20px 0px;
+  width: 100%;
+  padding: 20px 40px 50px 40px; }
+  /* line 430, sass/site.css.scss */
+  .project-info h1, .project-info h2, .project-info h3, .project-info p {
+    text-align: left;
+    color: #3126B1; }
+
+/* line 436, sass/site.css.scss */
+.projects-nav {
+  position: fixed;
+  height: 200px;
+  z-index: 600;
+  top: 0px;
+  right: 0px;
+  bottom: 0;
+  width: 100px;
+  margin-right: 31px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; }
+  /* line 449, sass/site.css.scss */
+  .projects-nav ul.projects-nav-list {
+    list-style: none; }
+    /* line 451, sass/site.css.scss */
+    .projects-nav ul.projects-nav-list li {
+      margin: 10px 0px; }
+  /* line 455, sass/site.css.scss */
+  .projects-nav .indicator {
+    height: 16px;
+    width: 16px;
+    display: block;
+    margin: 4px 0px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0px 2px 1.5px rgba(0, 0, 0, 0.35);
+    border: 2px solid #faf9f9; }
+    /* line 463, sass/site.css.scss */
+    .projects-nav .indicator.active {
+      background-color: #FAF9F9; }
+
+/* line 471, sass/site.css.scss */
+main.skills-page .skills-left-section {
+  background-color: #B7C2E6; }
+  /* line 473, sass/site.css.scss */
+  main.skills-page .skills-left-section .skills-title h2 {
+    color: #3126B1; }
+  /* line 476, sass/site.css.scss */
+  main.skills-page .skills-left-section .skills-title .sub-title {
+    display: block;
+    text-align: center;
+    color: #3126B1; }
+  @media screen and (max-width: 799px) {
+    /* line 482, sass/site.css.scss */
+    main.skills-page .skills-left-section .skills-title {
+      margin-left: 1px; } }
+/* line 489, sass/site.css.scss */
+main.skills-page .sub-title {
+  max-width: 350px;
+  color: #FAF9F9;
+  text-align: left; }
+  @media screen and (max-width: 799px) {
+    /* line 489, sass/site.css.scss */
+    main.skills-page .sub-title {
+      max-width: unset; } }
+/* line 497, sass/site.css.scss */
+main.skills-page .skills-list {
+  color: #FAF9F9;
+  list-style: none;
+  margin: 0px 16px; }
+  @media screen and (max-width: 799px) {
+    /* line 497, sass/site.css.scss */
+    main.skills-page .skills-list {
+      min-width: 50%; } }
+  /* line 505, sass/site.css.scss */
+  main.skills-page .skills-list li {
+    font-weight: 100;
+    text-align: left; }
+/* line 510, sass/site.css.scss */
+main.skills-page .skills-top-right-section {
+  height: 50%;
+  background-color: #EE7192; }
+  @media screen and (max-width: 800px) {
+    /* line 510, sass/site.css.scss */
+    main.skills-page .skills-top-right-section {
+      height: 100%; } }
+/* line 517, sass/site.css.scss */
+main.skills-page .skills-bottom-right-section {
+  height: 50%;
+  background-color: #F37D67; }
+  @media screen and (max-width: 800px) {
+    /* line 517, sass/site.css.scss */
+    main.skills-page .skills-bottom-right-section {
+      height: 100vh; } }
+
+/* line 528, sass/site.css.scss */
+.about h2 {
+  color: #F37D67;
+  text-align: left;
+  font-size: 48px;
+  margin: 60px 0px 0px 0px;
+  position: absolute; }
+
+/* line 536, sass/site.css.scss */
+.about-content-section {
+  margin: 150px 0px; }
+  @media screen and (min-width: 800px) {
+    /* line 536, sass/site.css.scss */
+    .about-content-section {
+      margin: 0px; } }
+
+/* line 542, sass/site.css.scss */
+.profile-image {
+  background: url("../../images/michael.jpg") center center/cover no-repeat;
+  border-radius: 125px;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+  display: block;
+  margin-left: 80px; }
+  @media screen and (max-width: 400px) {
+    /* line 542, sass/site.css.scss */
+    .profile-image {
+      margin-left: 40px; } }
+
+/* line 554, sass/site.css.scss */
+.about-right-section-container {
+  background-color: #F37D67; }
+
+/* line 558, sass/site.css.scss */
+.about-left-section-container {
+  background-color: #B7C2E6; }
+  /* line 560, sass/site.css.scss */
+  .about-left-section-container.middle-container {
+    height: unset; }
+
+/* line 566, sass/site.css.scss */
+.intrinsic-container {
+  position: relative;
+  height: 0;
+  overflow: hidden; }
+
+/* 16x9 Aspect Ratio */
+/* line 573, sass/site.css.scss */
+.intrinsic-container-16x9 {
+  padding-bottom: 56.25%; }
+
+/* 4x3 Aspect Ratio */
+/* line 578, sass/site.css.scss */
+.intrinsic-container-4x3 {
+  padding-bottom: 75%; }
+
+/* line 582, sass/site.css.scss */
+.intrinsic-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
+@media (max-width: 799px) {
+  /* line 592, sass/site.css.scss */
+  .project-info {
+    max-width: 80%;
+    flex-basis: 80%; } }
+@media screen and (min-width: 800px) {
+  /* line 599, sass/site.css.scss */
+  nav.navigation .nav-links-container.active {
+    flex-direction: row; }
+    /* line 601, sass/site.css.scss */
+    nav.navigation .nav-links-container.active .navigation-links {
+      width: 50%;
+      height: 100%;
+      flex-direction: column; }
+    /* line 606, sass/site.css.scss */
+    nav.navigation .nav-links-container.active .contact-links {
+      width: 50%;
+      height: 100%;
+      flex-direction: column; }
+
+  /* line 613, sass/site.css.scss */
+  section {
+    padding: 0px; }
+
+  /* line 617, sass/site.css.scss */
+  h2 {
+    margin-top: 0px; }
+
+  /* line 621, sass/site.css.scss */
+  .section {
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    display: flex !important;
+    flex-direction: column; }
+    /* line 627, sass/site.css.scss */
+    .section .row {
+      width: 100%; }
+    /* line 630, sass/site.css.scss */
+    .section.skills-section {
+      height: 50%;
+      background-color: #B7C2E6; }
+    /* line 634, sass/site.css.scss */
+    .section.contact-section {
+      height: 50%;
+      background-color: #5A2EB0; }
+
+  /* line 640, sass/site.css.scss */
+  .side-col {
+    height: 100%;
+    padding: 0px; }
+
+  /* line 645, sass/site.css.scss */
+  .desktop-view {
+    display: block; }
+
+  /* line 649, sass/site.css.scss */
+  .mobile-view {
+    display: none; }
+
+  /* line 654, sass/site.css.scss */
+  .projects section {
+    min-height: 100%; }
+    /* line 656, sass/site.css.scss */
+    .projects section.project-row {
+      background-color: #EED4DE;
+      height: 100vh; }
+    /* line 660, sass/site.css.scss */
+    .projects section.content-section-title {
+      background-color: #F37D67; }
+    /* line 663, sass/site.css.scss */
+    .projects section .slide {
+      display: block;
+      position: relative;
+      z-index: 0;
+      margin: 0px; }
+
+  /* line 672, sass/site.css.scss */
+  .project-image {
+    position: absolute;
+    display: block;
+    z-index: 0;
+    width: 494px;
+    height: 85vh;
+    margin: 0px auto;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.35); } }
+  @media screen and (min-width: 800px) and (min-width: 1000px) {
+    /* line 672, sass/site.css.scss */
+    .project-image {
+      width: 650px; } }
+  @media screen and (min-width: 800px) and (min-width: 1600px) {
+    /* line 672, sass/site.css.scss */
+    .project-image {
+      width: 1000px; } }
+
+@media screen and (min-width: 800px) {
+  /* line 689, sass/site.css.scss */
+  .project-info {
+    background: #FAF9F9;
+    z-index: 100;
+    padding: 32px 16px;
+    margin-right: 45%; }
+    /* line 698, sass/site.css.scss */
+    .project-info h1, .project-info h2, .project-info h3, .project-info p {
+      text-align: left;
+      color: #3126B1; } }
