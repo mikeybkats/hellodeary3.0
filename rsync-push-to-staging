@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "pushing local to staging"
+rsync -avr --exclude 'wp-config.php' ./wordpress/ root@hellodeary.com:/var/www/html/staging 

@@ -44,6 +44,10 @@ h3{
   color: $white;
   font-size: 18px;
   font-weight: 300;
+  line-height: 18px;
+  &.sub-title {
+    margin-top: 10px;  
+  }
 }
 h4{
   color: $white;
@@ -166,6 +170,9 @@ section {
   transition: all 0.5s;
   max-width: 200px;
   margin: 0px auto;
+  h4 {
+    line-height: 35px;
+  }
 }
 
 .button-container{
@@ -323,6 +330,9 @@ nav.navigation {
     @media screen and (min-width: 800px){
       padding: 8% 0px;
     }
+    .project-description {
+      padding-top: 10px;
+    }
     &.content-section-title{
       background-color: $bitter;
       .col-xs-12:first-child{
@@ -430,6 +440,13 @@ nav.navigation {
   h1, h2, h3, p {
     text-align: left;
     color: $darkBlue;
+  }
+  h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .sub-title {
+    margin-top: 10px;  
   }
 }
 
@@ -540,7 +557,7 @@ main.skills-page{
   }
 }
 .profile-image{
-  background:url('../../images/michael.jpg') center center/cover no-repeat;
+  background:url('../hellodeary/images/michael.jpg') center center/cover no-repeat;
   @include circle(250px);
   height: 200px;
   width: 200px;
@@ -548,6 +565,15 @@ main.skills-page{
   margin-left: 80px;
   @media screen and (max-width: 400px){
     margin-left: 40px;
+  }
+}
+
+////////////////// blank template page /////////////////////////
+.blank-page section {
+  background-color: black;  
+  .content-row {
+    background-color: black;
+    padding: 100px 0px;
   }
 }
 
