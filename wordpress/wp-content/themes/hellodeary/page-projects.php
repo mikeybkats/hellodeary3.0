@@ -64,37 +64,48 @@
       $development = has_tag( 'development', $post );
       $design = has_tag( 'design', $post );
       $video = has_tag( 'video', $post );
+      $images = has_tag( 'images', $post );
+      $title = the_title( $before , $after ,false);
+      $class='';
+      $class2='';
   ?>
   
-  <?php if ( $design > 0 ) : ?>
+  <?php if ( $design ) : ?>
     <section class="design-section hide row slide  middle-xs center-xs project-row" id=" " value="<?php echo $value; ?>">
       <?php if ( has_post_thumbnail() ) : ?>
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
       <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2><?php the_title(); ?></h2>
+        <h2 value="<?php echo $value; ?>"><?php the_title(); ?></h2>
         <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>
         <div class="row center-xs">
           <div class="col-xs-12 button-container">
-            <?php
-              if ( has_tag('video') > 0 ){  
-                $class='video-button';
-                $id=$key;
-                $target='_self';
+          <?php 
+            $tags = get_tags( array( 'hide_empty' => false ) );
+            if ( $tags ){ 
+              $class='';
+              $class2='';
+              $id='';
+              $target='_blank';
+              if ( has_tag('images') ){  
+                    $class='images-button';
+                    $id=$key;
+                    $target='_self';
               }
-              else {
-                $class='';
-                $id='';
-                $target='_blank';
+              if ( has_tag('video') ){  
+                    $class2='video-button';
+                    $id=$key;
+                    $target='_self';
               }
-            ?>
-              <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" id="<?php echo $id; ?>" target="<?php echo $target; ?>">
-              <div class="btn button-blue <?php echo $class; ?>">
-                  <h4>VIEW</h4>
-                </div>
-              </a>
+            }
+          ?> 
+            <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" id="<?php echo $title; ?>" target="<?php echo $target; ?>">
+            <div class="btn button-blue <?php echo $class;?> <?php echo $class2;?>">
+                <h4>VIEW</h4>
+              </div>
+            </a>
           </div>
         </div>
       </div>
@@ -102,13 +113,13 @@
     <?php $value++; ?>
   <?php endif; ?>
 
-  <?php if ( $development > 0 ) : ?>
+  <?php if ( $development ) : ?>
     <section class="development-section row slide  middle-xs center-xs project-row" id=" " value="<?php echo $devValue; ?>">
       <?php if ( has_post_thumbnail() ) : ?>
         <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
       <?php endif; ?>
       <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2><?php the_title(); ?></h2>
+        <h2 value="<?php echo $devValue; ?>"><?php the_title(); ?></h2>
         <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
         <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>

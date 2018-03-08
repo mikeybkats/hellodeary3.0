@@ -37,8 +37,8 @@ define('DB_CHARSET', 'utf8mb4');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('WP_HOME', 'http://localhost:8888');
-define('WP_SITEURL', 'http://localhost:8888');
+define('WP_HOME', 'http://localhost:8888/');
+define('WP_SITEURL', 'http://localhost:8888/');
 
 define( 'FS_METHOD', 'direct' );
 define( 'FTP_BASE', '/var/www/html/staging/' );

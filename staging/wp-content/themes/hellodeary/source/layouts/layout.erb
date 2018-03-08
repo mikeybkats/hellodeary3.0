@@ -1,0 +1,27 @@
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . "/wordpress/wp-blog-header.php"); ?>
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <script src="https://use.typekit.net/rey3dtk.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+
+    <title><%= current_page.data.title || "HELLODEARY" %></title>
+    <%= stylesheet_link_tag "flexboxgrid.min", :site %>
+    
+    <%= javascript_include_tag :all %>
+  </head>
+
+  <body>
+    <%= partial "header" %>
+
+    <%= yield %>
+
+    <%= partial "footer" %>
+  </body>
+</html>
