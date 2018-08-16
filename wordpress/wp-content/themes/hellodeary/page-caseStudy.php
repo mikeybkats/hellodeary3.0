@@ -32,6 +32,39 @@
     </div>
   </section>
 
+  <section class="case-study block-image-section row center-xs middle-xs">
+    <div class="col-xs-12 col-sm-8">
+      <?php if (get_field('image-block')): ?>
+        <div class="block-image" style="background:url('<?php the_field('image-block'); ?>') center center/cover no-repeat; background-position: 50% 0%;"></div>
+      <?php endif; ?>
+      <?php if (get_field('image-block-caption')): ?>
+        <h3 class="image-block-caption"><?php the_field('image-block-caption') ?></h3>
+      <?php endif; ?>
+    </div>
+  </section>
+
+  <section class="case-study row center-xs middle-xs">
+    <div class="col-xs-12 col-sm-8">
+      <div class="row center-xs middle-xs">
+        <div class="col-xs-12 col-sm-4">
+          <?php if (get_field('three-lists-left')): ?>
+            <?php the_field('three-lists-left'); ?>
+          <?php endif; ?>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <?php if (get_field('three-lists-middle')): ?>
+            <?php the_field('three-lists-middle'); ?>
+          <?php endif; ?>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <?php if (get_field('three-lists-right')): ?>
+            <?php the_field('three-lists-right'); ?>
+          <?php endif; ?>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <?php endwhile; else : ?>
     <p><?php _e( 'Sorry, no pages found.' ); ?></p>
   <?php endif; ?>
