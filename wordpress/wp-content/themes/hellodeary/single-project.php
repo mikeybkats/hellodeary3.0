@@ -1,7 +1,3 @@
-<?php 
-  /* Template Name: projects-content */
-?>
-
 <?php get_header(); ?>
 
 <main class="projects">
@@ -9,8 +5,10 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <?php
-    $posts = get_posts( array('posts_per_page'=> 10));
+    $posts = get_posts( array('posts_per_page'=> 8));
     $post_id = get_the_id();
+    $value = 0;
+    $devvalue = 0;
   ?>
       <div class="design-projects-nav projects-nav">
         <ul class="projects-nav-list">
@@ -20,10 +18,12 @@
               $design = has_category( 'design', $post );
           ?>
             <?php if ( $design > 0 ) : ?>
-              <li class="nav-list-item design-indicator hide" ><a href="" class="indicator" value="<?php echo $post->ID; ?>"></a></li>
+              <li class="nav-list-item design-indicator hide" ><a href="" class="indicator" value="<?php echo $value; ?>"></a></li>
+              <?php $value++; ?>
             <?php endif; ?>
             <?php if ( $development > 0 ) : ?>
-              <li class="nav-list-item development-indicator"><a href="" class="indicator" value="<?php echo $post->ID; ?>"></a></li>
+              <li class="nav-list-item development-indicator"><a href="" class="indicator" value="<?php echo $devvalue; ?>"></a></li>
+              <?php $devvalue++; ?>
             <?php endif; ?>
           <?php endforeach; ?>
         </ul>
@@ -52,9 +52,22 @@
     </div>
   </section>
 
-  <?php foreach ($posts as $post) : setup_postdata( $post ); ?>
-    <?php get_template_part('content','project'); ?>
-  <?php endforeach; ?>
+
+  <?php
+    $value = 0;
+    $devvalue = 0;
+    foreach ($posts as $post) : setup_postdata( $post ); 
+      $development = has_category( 'development', $post );
+      $design = has_category( 'design', $post );
+      $video = has_category( 'video', $post );
+      $images = has_category( 'images', $post );
+      $title = the_title( $before , $after ,false);
+  ?>
+  
+
+<?php
+endforeach;
+?>
 
 <?php endwhile; else : ?>
   <p><?php _e( 'sorry, no pages found.' ); ?></p>

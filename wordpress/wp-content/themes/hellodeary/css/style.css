@@ -1,7 +1,7 @@
 /*
 Error: File to import not found or unreadable: compass.
        Load path: /Users/michaelbarakat/sites/hellodeary3.0/wordpress/wp-content/themes/hellodeary/sass
-        on line 14 of ./sass/style.scss
+        on line 14 of sass/style.scss
 
 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html
 10: Tags: 
@@ -14,7 +14,7 @@ Error: File to import not found or unreadable: compass.
 17: @import "./font-awesome.scss";
 
 Backtrace:
-./sass/style.scss:14
+sass/style.scss:14
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:67:in `rescue in import'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:44:in `import'
 /usr/local/lib/ruby/gems/2.5.0/gems/sass-3.5.5/lib/sass/tree/import_node.rb:28:in `imported_file'
@@ -58,4 +58,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: File to import not found or unreadable: compass.\A        Load path: /Users/michaelbarakat/sites/hellodeary3.0/wordpress/wp-content/themes/hellodeary/sass\A         on line 14 of ./sass/style.scss\A \A 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html\A 10: Tags: \A 11: Text Domain: \A 12: */\A 13:  \A 14: @import \"compass\";\A 15: @import \"compass/reset\";\A 16: @import \"./site.css.scss\";\A 17: @import \"./font-awesome.scss\";"; }
+  content: "Error: File to import not found or unreadable: compass.\A        Load path: /Users/michaelbarakat/sites/hellodeary3.0/wordpress/wp-content/themes/hellodeary/sass\A         on line 14 of sass/style.scss\A \A 9: License URI: http://www.gnu.org/licenses/gpl-2.0.html\A 10: Tags: \A 11: Text Domain: \A 12: */\A 13:  \A 14: @import \"compass\";\A 15: @import \"compass/reset\";\A 16: @import \"./site.css.scss\";\A 17: @import \"./font-awesome.scss\";"; }

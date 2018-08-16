@@ -32,7 +32,10 @@ h2 {
 h3 {
   color: #FAF9F9;
   font-size: 18px;
-  font-weight: 300; }
+  font-weight: 300;
+  line-height: 18px; }
+  h3.sub-title {
+    margin-top: 10px; }
 
 h4 {
   color: #FAF9F9;
@@ -62,6 +65,35 @@ section {
     background-color: #B7C2E6; }
   section.contact-section {
     background-color: #5A2EB0; }
+
+.tags-row {
+  margin-top: 10px; }
+  @media screen and (max-width: 480px) {
+    .tags-row .tag-container {
+      margin: 0px 20px 5px 0px; } }
+  @media screen and (min-width: 480px) {
+    .tags-row .tag-container {
+      margin-top: 5px; } }
+  .tags-row .tag {
+    border-radius: 15px;
+    width: 110px;
+    background: #EE7192;
+    display: flex; }
+    .tags-row .tag .tag-text {
+      padding: 0px 5px;
+      color: #f9ccd8; }
+  .tags-row .tag:hover {
+    background: #de1b4e;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease; }
+    .tags-row .tag:hover .tag-text {
+      color: white;
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease; }
 
 .hide {
   position: absolute !important;
@@ -128,6 +160,8 @@ section {
   transition: all 0.5s;
   max-width: 200px;
   margin: 0px auto; }
+  .btn h4 {
+    line-height: 35px; }
 
 .button-container {
   margin-top: 15%; }
@@ -255,6 +289,8 @@ nav.navigation {
     @media screen and (min-width: 800px) {
       .projects section {
         padding: 8% 0px; } }
+    .projects section .project-description {
+      padding-top: 10px; }
     .projects section.content-section-title {
       background-color: #F37D67;
       height: 100vh; }
@@ -333,6 +369,11 @@ nav.navigation {
   .project-info h1, .project-info h2, .project-info h3, .project-info p {
     text-align: left;
     color: #3126B1; }
+  .project-info h3 {
+    font-size: 13px;
+    text-transform: uppercase; }
+  .project-info .sub-title {
+    margin-top: 10px; }
 
 .projects-nav {
   position: fixed;
@@ -418,7 +459,7 @@ main.skills-page .skills-bottom-right-section {
       margin: 0px; } }
 
 .profile-image {
-  background: url("../../images/michael.jpg") center center/cover no-repeat;
+  background: url("../hellodeary/images/michael.jpg") center center/cover no-repeat;
   border-radius: 125px;
   overflow: hidden;
   height: 200px;
@@ -428,6 +469,12 @@ main.skills-page .skills-bottom-right-section {
   @media screen and (max-width: 400px) {
     .profile-image {
       margin-left: 40px; } }
+
+.blank-page section {
+  background-color: black; }
+  .blank-page section .content-row {
+    background-color: black;
+    padding: 100px 0px; }
 
 .about-right-section-container {
   background-color: #F37D67; }
@@ -457,10 +504,6 @@ main.skills-page .skills-bottom-right-section {
   width: 100%;
   height: 100%; }
 
-@media (max-width: 799px) {
-  .project-info {
-    max-width: 80%;
-    flex-basis: 80%; } }
 @media screen and (min-width: 800px) {
   nav.navigation .nav-links-container.active {
     flex-direction: row; }
