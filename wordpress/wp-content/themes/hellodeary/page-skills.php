@@ -10,7 +10,7 @@
     <div class="skills-title col-xs-11 col-sm-6 col-md-6">
       <h2>Skills</h2>
       <div class="row center-xs">
-        <h3 class="sub-title col-xs-8">Currently, I'm learning cs50 on Harvard's edX platform.</h3>
+        <h3 class="sub-title col-xs-8">Currently, I'm building my own api and database.</h3>
       </div>
     </div>
 
@@ -24,18 +24,18 @@
         <div class="row center-xs">
           <ul class="skills-list">
             <li>js es5/es6</li>
-            <li>jQuery</li>
+            <li>jQuery (if you really want it)</li>
             <li>C</li>
             <li>HTML5</li>
             <li>CSS and SASS</li>
             <li>PHP</li>
           </ul>
           <ul class="skills-list">
-            <li>REACT.js (learning)</li>
+            <li>REACT.js</li>
             <li>SQL</li>
+            <li>MONGO (learning)</li>
             <li>express and node.js</li>
             <li>LAMP/LEMP stack</li>
-            <li>couchCMS</li>
             <li>Wordpress</li>
           </ul>
         </div>
