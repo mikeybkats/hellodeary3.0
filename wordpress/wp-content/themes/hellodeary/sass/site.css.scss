@@ -44,6 +44,10 @@ h3{
   color: $white;
   font-size: 18px;
   font-weight: 300;
+  line-height: 18px;
+  &.sub-title {
+    margin-top: 10px;  
+  }
 }
 h4{
   color: $white;
@@ -61,6 +65,10 @@ ul {
   padding: 0px;
   margin: 0px;
 }
+
+.hello-deary {
+}
+
 section {
   height: 100vh;
   max-width: 100%;
@@ -75,6 +83,54 @@ section {
   }
   &.contact-section{
     background-color: $purple;
+  }
+}
+
+.tags-row{
+  margin-top: 10px;
+  .tag-container{
+    @media screen and (max-width: 480px){
+      margin: 0px 20px 5px 0px;
+    }
+    @media screen and (min-width: 480px){
+      margin-top: 5px;
+    }
+    //@media screen and (min-width: 600px){
+      //margin: 0px -25px 5px 0px;
+    //}
+    //@media screen and (min-width: 800px){
+      //margin: 0px 25px 5px 0px;
+    //}
+    //@media screen and (min-width: 1000px){
+      //margin: 0px 5px 5px 0px;
+    //}
+    //@media screen and (min-width: 1200px){
+      //margin: 0px -12px 5px 0px;
+    //}
+  } 
+  .tag{
+    border-radius: 15px;
+    width: 110px;
+    background: $pink;
+    display: flex;
+    .tag-text{
+      padding: 0px 5px;
+      color: lighten($pink, 20%);
+    }
+  }
+  .tag:hover{
+    background: darken( $pink, 20% );
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    .tag-text{
+      color: white;
+      -webkit-transition: all 500ms ease;
+      -moz-transition: all 500ms ease;
+      -o-transition: all 500ms ease;
+      transition: all 500ms ease;
+    }
   }
 }
 
@@ -166,6 +222,12 @@ section {
   transition: all 0.5s;
   max-width: 200px;
   margin: 0px auto;
+  h4 {
+    line-height: 35px;
+  }
+}
+.btn:hover {
+  cursor: pointer;
 }
 
 .button-container{
@@ -177,6 +239,7 @@ section {
       }
       background: $white;
       border-color: $white;
+      cursor: pointer;
     }
   }
   .button-blue {
@@ -190,6 +253,7 @@ section {
       }
       background: $darkBlue;
       border-color: $darkBlue;
+      cursor: pointer;
     }
   }
 }
@@ -238,6 +302,7 @@ nav.navigation {
     max-width: 100%;
     margin: 0px;
     padding: 0px 20px;
+    height: 0px;
   }
   .navigation-links{
     max-width: 100%;
@@ -322,6 +387,9 @@ nav.navigation {
     padding: 0px 0px;
     @media screen and (min-width: 800px){
       padding: 8% 0px;
+    }
+    .project-description {
+      padding-top: 10px;
     }
     &.content-section-title{
       background-color: $bitter;
@@ -430,6 +498,13 @@ nav.navigation {
   h1, h2, h3, p {
     text-align: left;
     color: $darkBlue;
+  }
+  h3 {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+  .sub-title {
+    margin-top: 10px;  
   }
 }
 
@@ -540,7 +615,7 @@ main.skills-page{
   }
 }
 .profile-image{
-  background:url('../../images/michael.jpg') center center/cover no-repeat;
+  background:url('../hellodeary/images/michael.jpg') center center/cover no-repeat;
   @include circle(250px);
   height: 200px;
   width: 200px;
@@ -548,6 +623,15 @@ main.skills-page{
   margin-left: 80px;
   @media screen and (max-width: 400px){
     margin-left: 40px;
+  }
+}
+
+////////////////// blank template page /////////////////////////
+.blank-page section {
+  background-color: black;  
+  .content-row {
+    background-color: black;
+    padding: 100px 0px;
   }
 }
 
@@ -559,6 +643,201 @@ main.skills-page{
   background-color: $lightBlue;
   &.middle-container{
     height: unset;
+  }
+}
+
+////////////////// case study page /////////////////////
+section.case-study-hero.content-section-title {
+  background-color: $pink;
+  .relative-title {
+    position: relative;
+    z-index: 590;
+    h3 {
+      text-align: center;
+    }
+  }
+  .background-hero {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    opacity: .3;
+  }
+  p {
+    max-width: 500px;
+  }
+}
+
+.case-study-hero, .case-study {
+  h3.sub-title {
+    font-size: 28px;
+    text-align: left;
+    line-height: 28px;
+    margin: 20px 0px;
+    font-weight: 400;
+  }
+}
+
+section.case-study {
+  height: auto;
+  padding: 120px 0px;
+  background: #fafafa;
+  h3, h2, p, li {
+    color: black;
+  }
+  .banner-title {
+    background: #EC7379;
+    padding: 0px 20px 0px 15%;
+    position: relative;
+    left: 0px;
+    margin: 20px 30px 20px 0px;
+    width: 250px;
+    h3 {
+      color: white;
+      min-width: 120px;
+    }
+  }
+  .banner-content {
+    padding: 10px;
+    max-width: 70%;
+  }
+}
+
+.block-center {
+  margin: 0px auto;
+}
+
+section.case-study.study-three-column {
+  background-color: #3b3b3b;  
+  li {
+    color: #FAF9F9;
+    h2{
+      color: #FAF9F9;
+    }
+  }
+  li:first-child h2 {
+    font-family: "canada-type-gibson";
+  }
+  li {
+    font-weight: 300;
+    h2 {
+      font-weight: 400;
+    }
+  }
+  li:nth-child(2) {
+    margin-top: 10px;
+  }
+  li:not(:first-child) {
+    list-style: disc;
+    margin-left: 25px;
+  }
+}
+
+section.case-study.banner {
+  padding: 40px 0px;
+  .sub-title {
+    text-align: right;
+  }
+  .project-description {
+    font-weight: 300;
+  }
+  .banner-list {
+    ul {
+      display: inline-flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    li {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-weight: 300;
+    }
+    li span.tag-block {
+      font-weight: 400;
+      background-color: #eee;
+      margin: 5px;
+      padding: 12px;
+      color: #232323;
+      font-size: 16px;
+      max-width: 150px;
+      align-items: center;
+      white-space:nowrap;
+    }
+  }
+  .block-center {
+    max-width: 820px;
+  }
+}
+
+.block-image-container {
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .35);
+  padding-top: 27px;
+  border-top-right-radius: 5px;
+}
+
+.block-image {
+  margin: 0px auto;
+  min-height: 500px;
+}
+
+.browser-bar {
+  position: relative;
+  height: 28px;
+  top: -28px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+
+.image-block-caption {
+  margin: 20px auto;
+  //width: 80%;
+  text-align: left;
+}
+
+section.block-image-section {
+  background-color: $lightBlue;
+  padding: 60px 0px;
+  p {
+    font-weight: 300;
+  }
+  h3 {
+    font-size: 300;
+    text-align: left;
+  }
+  p, h2, h3 {
+    color: white;
+  }
+  ul {
+    margin: 10px 0px 10px 20px; 
+  }
+  li {
+    color: white;
+    list-style: disc;
+    font-weight: 300;
+  }
+  span.yellow {
+    background: yellow;
+    padding: 0px 5px;
+    color: gray;
+  }
+  span.magenta {
+    background: magenta;
+    padding: 0px 5px;
+  }
+  h2.title {
+    text-align: left;
+    margin: 0px 0px 30px 0px;
+  }
+  .case-study-image-container {
+    margin-bottom: 50px;
+  }
+}
+
+section.case-study.view-project {
+  height: 100px;
+  .button-container {
+    margin-top: 0;
   }
 }
 
@@ -590,8 +869,8 @@ main.skills-page{
 ////////////////////// media queries //////////////////////////
 @media (max-width: 799px){
   .project-info{
-    max-width: 80%;
-    flex-basis: 80%;
+    //max-width: 100%;
+    //flex-basis: 100%;
   }
 }
 

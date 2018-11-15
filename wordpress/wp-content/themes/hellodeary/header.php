@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <!--<link rel="icon" type="image/png" href="../images/favicon.png" />
+    -->
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
     <title><?php bloginfo('title'); ?></title>
     <?php wp_head(); ?>
   </head>

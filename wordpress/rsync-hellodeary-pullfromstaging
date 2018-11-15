@@ -1,3 +1,0 @@
-#!/bin/bash
-echo "pulling from staging"
-rsync -vr root@hellodeary.com:/var/www/html/staging/ .

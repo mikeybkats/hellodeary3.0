@@ -1,5 +1,5 @@
 <?php 
-  /* Template Name: projects */
+  /* Template Name: projects-content */
 ?>
 
 <?php get_header(); ?>
@@ -9,25 +9,21 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
   <?php
-    $posts = get_posts( array('posts_per_page'=> 8));
-    $post_id = get_the_ID();
-    $value = 0;
-    $devValue = 0;
+    $posts = get_posts( array('posts_per_page'=> 10));
+    $post_id = get_the_id();
   ?>
       <div class="design-projects-nav projects-nav">
         <ul class="projects-nav-list">
           <?php 
             foreach ($posts as $post) : setup_postdata( $post ); 
-              $development = has_tag( 'development', $post );
-              $design = has_tag( 'design', $post );
+              $development = has_category( 'development', $post );
+              $design = has_category( 'design', $post );
           ?>
             <?php if ( $design > 0 ) : ?>
-              <li class="nav-list-item design-indicator hide" ><a href="" class="indicator" value="<?php echo $value; ?>"></a></li>
-              <?php $value++; ?>
+              <li class="nav-list-item design-indicator hide" ><a href="" class="indicator" value="<?php echo $post->ID; ?>"></a></li>
             <?php endif; ?>
             <?php if ( $development > 0 ) : ?>
-              <li class="nav-list-item development-indicator"><a href="" class="indicator" value="<?php echo $devValue; ?>"></a></li>
-              <?php $devValue++; ?>
+              <li class="nav-list-item development-indicator"><a href="" class="indicator" value="<?php echo $post->ID; ?>"></a></li>
             <?php endif; ?>
           <?php endforeach; ?>
         </ul>
@@ -36,9 +32,9 @@
 
   <section class="content-section-title row center-xs middle-xs">
     <div class="col-xs-12">
-      <h2>Projects</h2>
+      <h2>projects</h2>
         <div class="row center-xs">
-          <h3 class="sub-title col-xs-8">Good things made with good technologies.</h3>
+          <h3 class="sub-title col-xs-8">good things made with good technologies.</h3>
         </div>
       </div>
     </div>
@@ -56,93 +52,12 @@
     </div>
   </section>
 
-
-  <?php
-    $value = 0;
-    $devValue = 0;
-    foreach ($posts as $post) : setup_postdata( $post ); 
-      $development = has_tag( 'development', $post );
-      $design = has_tag( 'design', $post );
-      $video = has_tag( 'video', $post );
-      $images = has_tag( 'images', $post );
-      $title = the_title( $before , $after ,false);
-      $class='';
-      $class2='';
-  ?>
-  
-  <?php if ( $design ) : ?>
-    <section class="design-section hide row slide  middle-xs center-xs project-row" id=" " value="<?php echo $value; ?>">
-      <?php if ( has_post_thumbnail() ) : ?>
-        <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
-      <?php endif; ?>
-      <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2 value="<?php echo $value; ?>"><?php the_title(); ?></h2>
-        <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
-        <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
-        <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>
-        <div class="row center-xs">
-          <div class="col-xs-12 button-container">
-          <?php 
-            $tags = get_tags( array( 'hide_empty' => false ) );
-            if ( $tags ){ 
-              $class='';
-              $class2='';
-              $id='';
-              $target='_blank';
-              if ( has_tag('images') ){  
-                    $class='images-button';
-                    $id=$key;
-                    $target='_self';
-              }
-              if ( has_tag('video') ){  
-                    $class2='video-button';
-                    $id=$key;
-                    $target='_self';
-              }
-            }
-          ?> 
-            <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" id="<?php echo $title; ?>" target="<?php echo $target; ?>">
-            <div class="btn button-blue <?php echo $class;?> <?php echo $class2;?>">
-                <h4>VIEW</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <?php $value++; ?>
-  <?php endif; ?>
-
-  <?php if ( $development ) : ?>
-    <section class="development-section row slide  middle-xs center-xs project-row" id=" " value="<?php echo $devValue; ?>">
-      <?php if ( has_post_thumbnail() ) : ?>
-        <div id="project-image-id" class="col-xs-12 col-md-10 project-image" style="background:url(' <?php the_post_thumbnail_url( 'full' ); ?> ') center center/cover no-repeat; background-position: 50% 0%;"   title="<?php the_title_attribute(); ?>"></div>
-      <?php endif; ?>
-      <div class="project-info col-xs-10 col-sm-4 col-md-3">
-        <h2 value="<?php echo $devValue; ?>"><?php the_title(); ?></h2>
-        <h3 class="sub-title"><?php $key="typeOrRole"; echo get_post_meta($post->ID, $key, true); ?></h3>
-        <h3 class="sub-sub-title"><?php $key="technologies"; echo get_post_meta($post->ID, $key, true); ?></h3>
-        <p class="project-description"><?php $key="description"; echo get_post_meta($post->ID, $key, true); ?></p>
-        <div class="row center-xs">
-          <div class="col-xs-12 button-container">
-            <a href="<?php $key="url"; echo get_post_meta($post->ID, $key, true); ?>" target="_blank">
-              <div class="btn button-blue">
-                <h4>VIEW</h4>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <?php $devValue++; ?>
-  <?php endif; ?>
-
-<?php
-endforeach;
-?>
+  <?php foreach ($posts as $post) : setup_postdata( $post ); ?>
+    <?php get_template_part('content','project'); ?>
+  <?php endforeach; ?>
 
 <?php endwhile; else : ?>
-  <p><?php _e( 'Sorry, no pages found.' ); ?></p>
+  <p><?php _e( 'sorry, no pages found.' ); ?></p>
 <?php endif; ?>
 
 <?php get_footer(); ?>
